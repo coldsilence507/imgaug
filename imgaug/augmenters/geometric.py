@@ -3811,6 +3811,7 @@ class PerspectiveTransform(meta.Augmenter):
             if has_zero_sized_axis:
                 warped = image
             elif nb_channels <= 4:
+                print(f"PerspM:{matrix}")
                 warped = cv2.warpPerspective(
                     _normalize_cv2_input_arr_(image),
                     matrix,
